@@ -13,6 +13,17 @@ function Footer() {
           <p>💬 <span className="text-gray-300 hover:text-green-400">aungtheinaung79 (Telegram)</span></p>
         </div>
 
+        <div className="flex flex-col gap-3 md:items-end items-center">
+          <h3 className="text-2xl font-semibold text-green-400">Navigations</h3>
+          <ul className="flex flex-col md:flex-row gap-4 text-lg">
+            <li><a href="#home" className="hover:text-green-400 transition-colors duration-300">Home</a></li>
+            <li><a href="#services" className="hover:text-green-400 transition-colors duration-300">Services</a></li>
+            <li><a href="#projects" className="hover:text-green-400 transition-colors duration-300">Projects</a></li>
+            <li><a href="#contact" className="hover:text-green-400 transition-colors duration-300">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div className="mt-8 border-t border-gray-700/40"></div>
 
       <div className="mt-5 text-center text-gray-400 text-sm">
