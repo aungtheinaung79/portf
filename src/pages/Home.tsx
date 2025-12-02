@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   FaGithub,
   FaLinkedin,
@@ -7,30 +8,40 @@ import {
 } from "react-icons/fa6";
 
 function Home() {
-  return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-5 py-10 overflow-hidden">
+  const navigate = useNavigate();
 
-      {/* 🌆 Animated Neon Background */}
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Projects", path: "/projects" },
+    { name: "Certificates", path: "/certificates" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  return (
+    <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-10 overflow-hidden">
+
+      {/* 🌌 Urban Neon Gradient Background */}
       <motion.div
         animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 bg-[linear-gradient(135deg,_#0f0f10,_#111827,_#1e293b,_#0f0f10)] bg-[length:300%_300%] -z-10"
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        className="absolute inset-0 bg-[linear-gradient(135deg,_#0a0a0b,_#111827,_#1e1b4b,_#0a0a0b)] bg-[length:300%_300%] -z-10"
       />
 
-      {/* 💠 Floating Neon Blurs */}
+      {/* 💫 Floating Neon Lights */}
       <motion.div
         animate={{ y: [0, -30, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full"
+        className="absolute top-20 left-16 w-72 h-72 bg-cyan-500/25 blur-3xl rounded-full"
       ></motion.div>
 
       <motion.div
-        animate={{ y: [0, 25, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/25 blur-3xl rounded-full"
+        animate={{ y: [0, 30, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-20 right-16 w-80 h-80 bg-purple-600/25 blur-3xl rounded-full"
       ></motion.div>
 
-      {/* 🧑‍💻 Profile Image */}
+      {/* 🧍 Profile Image */}
       <motion.img
         src="/ace.jpg"
         alt="Profile"
@@ -45,7 +56,7 @@ function Home() {
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
-        className="text-4xl md:text-5xl font-extrabold mt-5 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 drop-shadow-[0_0_25px_rgba(56,189,248,0.5)] hover:scale-105 transition-transform duration-300"
+        className="text-4xl md:text-5xl font-extrabold mt-5 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 drop-shadow-[0_0_30px_rgba(56,189,248,0.6)] hover:scale-105 transition-transform duration-300"
       >
         Aung Thein Lin
       </motion.h1>
@@ -65,12 +76,12 @@ function Home() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="text-gray-400 max-w-2xl text-base md:text-lg mt-5 leading-relaxed px-4 md:px-8"
+        className="text-gray-300 max-w-2xl text-base md:text-lg mt-5 leading-relaxed px-4 md:px-8"
       >
-        I’m a passionate <span className="text-cyan-400 font-semibold">Software Developer</span> 
-        who loves building fast, beautiful, and user-friendly digital experiences.
-        My mission is to craft <span className="text-purple-400">modern web & mobile solutions</span> 
-        that inspire users and elevate brands.
+        ကျွန်တော်သည် <span className="text-cyan-400 font-semibold">Software Developer</span> တစ်ဦးအနေနဲ့  
+        လှပပြီး အသုံးပြုရလွယ်ကူသော Web နှင့် Mobile Application များကို ဖန်တီးပေးနေပါသည်။  
+        စီးပွားရေးလုပ်ငန်းများအတွက် အောင်မြင်မှုကို တိုးတက်အောင် ပြုလုပ်ပေးရခြင်းဟာ  
+        ကျွန်တော်၏ အဓိက ရည်ရွယ်ချက် ဖြစ်ပါတယ်။
       </motion.p>
 
       {/* 🌐 Social Icons */}
@@ -100,7 +111,30 @@ function Home() {
         ))}
       </motion.div>
 
-      {/* 🖥️ Hero Illustration */}
+      {/* 🧭 Navigation Buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        className="flex flex-wrap justify-center gap-4 mt-10"
+      >
+        {navLinks.map((link, i) => (
+          <motion.button
+            key={i}
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0 0 20px rgba(34,211,238,0.6)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate(link.path)}
+            className="px-5 py-2 text-sm md:text-base rounded-full border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 hover:text-white transition-all duration-300 backdrop-blur-md"
+          >
+            {link.name}
+          </motion.button>
+        ))}
+      </motion.div>
+
+      {/* 🖼️ Hero Illustration */}
       <motion.img
         src="/hptos.png"
         alt="Web Illustration"
@@ -110,12 +144,12 @@ function Home() {
         className="w-full max-w-md md:max-w-xl mt-10 object-contain transition-transform duration-500 hover:scale-105 hover:rotate-1 cursor-pointer"
       />
 
-      {/* 💫 Neon Glow Bottom Layer */}
+      {/* 🌈 Neon Glow Bottom Layer */}
       <motion.div
-        animate={{ opacity: [0.15, 0.3, 0.15], scale: [1, 1.05, 1] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute inset-x-0 bottom-0 h-64 md:h-72 bg-gradient-to-t from-cyan-400/20 via-transparent to-transparent blur-3xl"
-      ></motion.div>
+        animate={{ opacity: [0.15, 0.4, 0.15], scale: [1, 1.05, 1] }}
+        transition={{ duration: 6, repeat: Infinity }}
+        className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-cyan-400/25 via-transparent to-transparent blur-3xl"
+      />
     </div>
   );
 }

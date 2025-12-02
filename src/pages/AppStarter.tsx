@@ -45,16 +45,14 @@ function AppStarter() {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="w-28 h-28 object-cover rounded-full border-4 border-green-400 shadow-[0_0_30px_rgba(34,197,94,0.4)]"
             />
-            <p className="font-semibold text-gray-100 text-lg"> 💚Nyi Thein Aung💚</p>
+            <p className="font-semibold text-gray-100 text-lg"> 💚Aung Thein Lin💚</p>
           </div>
             <div>
               <h3 className="text-2xl font-bold text-green-400 mt-3">My Contact</h3>
-              <p>📞 <span className="text-gray-300 hover:text-green-400">+95 660 323 675</span></p>
+              <p>📞 <span className="text-gray-300 hover:text-green-400">+95 9xxxxxxxxx</span></p>
               <p>📧 <span className="text-gray-300 hover:text-green-400">aungtheinaung79@gmail.com</span></p>
               <p>💬 <span className="text-gray-300 hover:text-green-400">aungtheinaung79 (Telegram)</span></p>
             </div>
-
-
           <div className="flex flex-col gap-3 md:items-end items-center">
             <h3 className="text-2xl font-semibold text-green-400">Navigations</h3>
             <ul className="flex flex-col md:flex-row gap-4 text-lg">
@@ -78,7 +76,7 @@ function AppStarter() {
 
         <div className="mt-6 text-center text-gray-400 text-sm">
           © {new Date().getFullYear()}{" "}
-          <span className="text-green-400 font-semibold">Nyi Thein Aung</span> — Crafted with 💚 and Code.
+          <span className="text-green-400 font-semibold">Aung Thein Lin</span> — Crafted with 💚 and Code.
         </div>
 
         <motion.div
