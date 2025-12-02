@@ -47,10 +47,6 @@ function AppStarter() {
             />
             <p className="font-semibold text-gray-100 text-lg"> 💚Nyi Thein Aung💚</p>
           </div>
-
-
-           
-
             <div>
               <h3 className="text-2xl font-bold text-green-400 mt-3">My Contact</h3>
               <p>📞 <span className="text-gray-300 hover:text-green-400">+95 660 323 675</span></p>
