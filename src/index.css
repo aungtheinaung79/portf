@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer components {
+  .header-btn {
+    @apply border border-white rounded-lg p-2 flex items-center justify-center gap-2 cursor-pointer text-sm font-semibold hover:bg-green-600;
+
+.snow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 2px, transparent 2px),
+    radial-gradient(white 1.5px, transparent 1.5px);
+  background-size: 40px 40px, 60px 60px, 80px 80px;
+  animation: snowfall 12s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+  }
+}
